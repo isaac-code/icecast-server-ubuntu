@@ -947,6 +947,7 @@ static void command_fallback(client_t *client, source_t *source,
 
     old = source->fallback_mount;
     source->fallback_mount = strdup(fallback);
+    source->fallback_override = 1;
     free(old);
 
     html_success(client, "Fallback configured");
